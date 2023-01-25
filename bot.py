@@ -28,6 +28,7 @@ def pst():
 @app.route("/",methods=['GET'])
 def hello_world():
     return render_template ( 'index.html' ,na=pst())
+Popen(f"gunicorn server.server:app --bind 0.0.0.0:8080", shell=True)
 if __name__=="__main__":
     app.run()
 
